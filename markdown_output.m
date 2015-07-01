@@ -220,7 +220,6 @@ static void print_attr_element(NSMutableAttributedString *out, element *elt, NSD
         case H1: case H2: case H3: case H4: case H5: case H6:
             print_attr_element_list(out, elt->children, attributes, merge(current, attributes[elt->key]));
             print_attr_string(out, @"\n",current);
-            print_attr_string(out, @"\n",current);
             break;
         case PLAIN:
             print_attr_element_list(out, elt->children, attributes, merge(current, attributes[elt->key]));
@@ -228,7 +227,6 @@ static void print_attr_element(NSMutableAttributedString *out, element *elt, NSD
         case PARA:
             //NSLog(@"%@",merge(current, attributes[elt->key]));
             print_attr_element_list(out, elt->children, attributes, merge(current, attributes[elt->key]));
-            print_attr_string(out, @"\n",current);
             print_attr_string(out, @"\n",current);
             break;
         case HRULE:         print_attr_string(out, @"\n-----------------------------------------------------\n", merge(current, attributes[elt->key])); break;
